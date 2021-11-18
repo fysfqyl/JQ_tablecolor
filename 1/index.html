@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="./js/jquery-3.6.0.js"></script>
+    <script src="./js/JQuery.tableColor.js"></script>
+    <style>
+        tr td{
+			border: 2px solid black;
+			width: 150px;
+			height: 30px;
+		}
+        .odd{
+			background-color: antiquewhite;
+		}
+		
+		.even{
+			background-color: aquamarine;
+		}
+        input{
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <table>
+        <tr><td>ID编号</td><td>姓名</td><td>性别</td></tr>
+        <tr><td>001</td><td>王1</td><td>男</td></tr>
+        <tr><td>002</td><td>王2</td><td>女</td></tr>
+        <tr><td>003</td><td>王3</td><td>女</td></tr>
+        <tr><td>004</td><td>王4</td><td>男</td></tr>
+    </table>
+    <input type="button" value="传统方式" id="btn1">
+    <input type="button" value="插件方法" id="btn2">
+</body>
+</html>
+<script>
+    $("#btn1").click(function() {
+        $("tr:odd").addClass("odd");
+        $("tr:even").addClass("even");        
+    })
+    $("#btn2").click(function() {
+        $("table").tableColor({
+            'tr:odd' :{background: 'blue',color: 'red'},
+            'tr:first' :{background: 'yello',color: 'pink'}
+        });
+    })
+</script>
